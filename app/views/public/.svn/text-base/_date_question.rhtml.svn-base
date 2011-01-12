@@ -1,0 +1,8 @@
+<%= render :partial=>"public/question", :object=>date_question %>
+
+
+<div class="response">
+
+<%= calendar_date_select_tag date_question.id + ".value", date_question.value, :class=>"input" %>
+
+</div>

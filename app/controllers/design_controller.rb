@@ -1,0 +1,278 @@
+class DesignController < ApplicationController
+
+  def index
+    @name = session[:survey_name];
+    @design = get_current_design
+
+    @breadcrumbs = [["Edit #{@name}", nil]]
+  end
+
+  def start_edit_element
+    id = params[:id]
+    get_current_design.set_rollback_point
+    begin_editing(id)
+  end
+
+
+  def async_edit
+
+    @design = get_current_design
+    id = get_current_element_id
+    @element = @design.find_element(id)
+
+
+
+
+    if (params["edit_action"].to_s == "save")
+
+      gather_form_data
+      if @element.valid 
+        if add_mode
+          # insert html 
+          insert_element_html(@element)
+          leave_add_mode 
+        else
+          # replace html 
+          replace_element_html(@element)
+        end
+      else
+        render :update do |page|
+          page.show 'errors'
+          page.replace_html 'errors', :partial=>'element_errors', :object=>@element.validation_problems
+        end
+      end
+
+    else #if (params["edit_action"].to_s == "cancel")
+      render :update do |page|
+        page.visual_effect :fade, 'element_editor', :duration=>0.5
+        page.visual_effect :fade, 'overlay', :duration=>0.5
+      end
+      leave_add_mode if add_mode
+      
+      
+      @design.rollback
+      
+    end
+
+  end
+  
+  def promote_element
+    
+    @design = get_current_design
+
+    id = params['id']
+    @element = @design.find_element(id)
+
+    if @element.promotable? 
+
+      @design.set_rollback_point
+
+      render :update do |page|
+        page.remove @element.id
+        page.insert_html :before, @element.one_before.id, :partial=>'element', :object=>@element
+      end
+
+      @design.execute("PromoteElement '#{id}'") 
+    end   
+
+  end
+
+  def demote_element
+
+    @design = get_current_design
+
+    id = params['id']
+    @element = @design.find_element(id)
+
+    @design.set_rollback_point
+
+    if @element.demotable? 
+      render :update do |page|
+        page.remove @element.id
+        page.insert_html :after, @element.one_after.id, :partial=>'element', :object=>@element
+      end
+
+      @design.execute("DemoteElement '#{id}'") 
+    end
+
+  end
+
+  def delete_element
+    @design = get_current_design
+    @design.set_rollback_point
+    id = params['id']
+
+    render :update do |page|
+      page.remove id
+    end
+    
+    @design.execute("DeleteElement '#{id}'")
+  end
+  
+  def add_element
+    @design = get_current_design
+    @design.set_rollback_point
+    type = params['type']
+    before = params['before']
+    
+    command = "InsertElement '#{type}', '#{before}'";
+
+    @design.execute(command) 
+
+    added = @design.last_element_added
+
+    if added.editable?
+      enter_add_mode
+      begin_editing(added.id)
+    else
+      insert_element_html(added)
+    end
+    
+  end
+
+
+  def undo 
+    @design = get_current_design
+    @design.rollback
+    redirect_to :action=>'design'
+  end
+
+  def show_add_element
+		@addable = [ 
+			['TextQuestion', 'Text question', '<strong>Text questions</strong> allow the user to type in text for the answer. You can choose either a <strong>single line</strong> or <strong>multi line</strong> response.'], 
+			['NumberQuestion', 'Number question', '<strong>Number questions</strong> allow the user to type in a number. You can choose whether to allow <strong>decimals</strong> or <strong>whole numbers</strong> only.'],
+			['DateQuestion', 'Date question', '<strong>Date questions</strong> allow the user to type in a date or select a date using a calendar.'],
+			['AddressQuestion', 'Address question', '<strong>Address questions</strong> allow the user to enter a postal address. You can choose how many text boxes are displayed, how they are labelled and which must always be filled in.'],
+			['EmailQuestion', 'Email address question', '<strong>Email questions</strong> only allow the use to enter a well-formed email address.'],
+			['UrlQuestion', 'Website address question', '<strong>Website address questions</strong> only allow the user to enter a well-formed URL.'],
+			['ListQuestion', 'List question', '<strong>List questions</strong> allow the user to select answers from a list of possibilities that you define. You can choose to let the user pick a <strong>single answer</strong> or <strong>multiple answers</strong>. There are also options for allowing the user to type in an <strong>alterntaive answer</strong>.'],
+			['MatrixQuestion', 'Matrix question', '<strong>Matrix questions</strong> are like <strong>list questions</strong> in that the user can pick answers from a list of possibilities. They differ in that you can enter several question rows, and the user can select answers for each row.'],
+			['Paragraph', 'Text/image content', '<strong>Text/image content</strong> allows you to place text or images on the survey. The user is not asked for any response.'],
+			['PageBreak', 'Page break', '<strong>Page breaks</strong> allow you to divide up the survey into more than one page.']
+
+		]
+
+		render :update do |page|
+			page.replace_html 'add_element', :partial => 'addable_elements', :layout=>false
+			page.call "centerElement", "add_element"
+			page.visual_effect :appear, 'add_element', :duration=>0.5
+			page.call "centerAndStretch", "overlay"
+			page.visual_effect :appear, 'overlay', :duration=>0.5, :to=>0.5
+		end
+
+  end
+
+  def hide_add_element
+    render :update do |page|
+      #page.hide 'add_element'
+      page.visual_effect :fade, 'add_element', :duration=>0.5
+      page.visual_effect :fade, 'overlay', :duration=>0.5
+    end
+  end
+
+  private 
+  
+  def begin_editing(id) 
+    @design = get_current_design
+
+    set_current_element_id(id)
+
+    @element = @design.find_element(id)
+    
+    render :update do |page|
+      page.hide 'errors'
+      page.replace_html 'edit_element_heading', "Edit #{@element.to_s.downcase}"
+      page.replace_html 'element_fields', :partial => @element.edit_template_name, :object => @element, :layout => false
+      page.call "centerElement", "element_editor"
+      page.visual_effect :appear, 'element_editor', :duration=>0.5
+      page.call "centerAndStretch", "overlay"
+      page.visual_effect :appear, 'overlay', :duration=>0.5, :to=>0.5
+      page.hide 'add_element'
+    end
+  end
+
+  def get_current_design
+    session[:design]
+  end
+  
+  def get_current_element
+    get_current_design.find_element(get_current_element_id)
+  end
+
+  def get_current_element_id
+    session[:element_id]
+  end
+
+  def set_current_element_id(id)
+    session[:element_id] = id
+  end
+
+  def enter_add_mode
+    session[:add_mode] = true
+  end
+  
+  def leave_add_mode
+    session[:add_mode] = false
+  end
+  
+  def add_mode
+    session[:add_mode] == true
+  end
+
+  def gather_form_data
+
+    if request.post? 
+      
+      element = get_current_element
+      element.reset_prior_to_gathering_form_data 
+
+      # do they want to set any values?
+
+      for key in params.keys
+        if key =~ /^set:(.+)$/
+          property = Regexp.last_match(1)
+          value = params[key]
+          element.set_property(property, value);
+        end
+      end
+
+      # do they want to do any commands from the action element?
+      if params["edit_action"].to_s =~ /^cmd:(.+)$/
+          command = Regexp.last_match(1)
+          @design.execute(command) if command
+      end
+    end
+
+  
+  end
+  
+  def insert_element_html(element) 
+    if element.one_after
+      render :update do |page|
+        page.insert_html :before, element.one_after.id, :partial=>'element', :object=>element
+        page.visual_effect :fade, 'element_editor', :duration=>0.5
+        page.visual_effect :fade, 'add_element', :duration=>0.5
+        page.visual_effect :fade, 'overlay', :duration=>0.5
+      end
+    else
+      render :update do |page|
+        page.insert_html :before, 'end_of_elements', :partial=>'element', :object=>element
+        page.visual_effect :fade, 'element_editor', :duration=>0.5
+        page.visual_effect :fade, 'add_element', :duration=>0.5
+        page.visual_effect :fade, 'overlay', :duration=>0.5
+      end
+    end
+  
+  end 
+
+  def replace_element_html(element)
+    render :update do |page|
+      page.replace_html element.id, :partial=>'element', :object=>element
+      page.visual_effect :fade, 'element_editor', :duration=>0.5
+      page.visual_effect :fade, 'overlay', :duration=>0.5
+    end
+  end 
+  
+
+
+end

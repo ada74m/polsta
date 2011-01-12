@@ -1,0 +1,40 @@
+class Response < ActiveRecord::Base
+
+	belongs_to :version
+	serialize :answers
+	before_create :set_guid
+
+	def Response.for_version(version, remote_ip) 
+		Response.new(:version=>version, :remote_ip=>remote_ip, :answers=>{})
+	end
+
+	def set_answer(question, value)
+		answers[question.id] = value
+	end
+	
+	def get_answer(question)
+		answers[question.id]
+	end
+
+	protected 
+	
+	def after_create
+		version.responses_count +=1
+		version.save!
+		version.survey.responses_count += 1
+		version.survey.save!
+	end
+	
+	def after_destroy
+		version.responses_count -=1
+		version.survey.responses_count -= 1
+	end
+
+
+	protected
+	
+	def set_guid
+		self.guid = Digest::MD5.hexdigest("#{Time.new.to_i} #{Time.new.usec} #{Kernel.rand}")
+	end
+
+end

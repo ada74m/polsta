@@ -1,0 +1,14 @@
+<div id="survey-actions">
+	
+	<%= form_tag :controller=>'admin', :action=>'save' %>
+		<%= submit_tag "Save", :name=>"commit", :class=>"button" %>
+		<%= submit_tag "Cancel", :name=>"cancel", :class=>"button"   %>
+	</form>
+</div>
+
+<%= render(:partial => "design", :object=>@design) %>
+
+<br/>
+
+<%#= @design.rollback_points.join("->") %>
+<%#= link_to 'Undo', :action=>"undo" %>

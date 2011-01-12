@@ -1,0 +1,8 @@
+<% if !(survey_header.picture_url.blank?) %>
+<img src="http://<%= survey_header.picture_url%>"/>
+<% end %>
+
+<% if survey_header.heading %>
+<h1><%= survey_header.heading %></h1>
+<% end %>
+<div style="clear:both"></div>

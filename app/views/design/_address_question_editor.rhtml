@@ -1,0 +1,71 @@
+<table>
+	<%= render :partial=>"question_editor", :object=>address_question_editor %>
+
+	<tr>
+		<td class="label-cell">Line 1:</td>
+		<td>
+			<%= property_textbox "line1label", address_question_editor.line1label, "input wide" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="label-cell">&nbsp;</td>
+		<td>
+			<%= property_radios "line1usage", {"essential"=>"essential", "optional"=>"optional", "not used"=>"not used"}, address_question_editor.line1usage, '' %>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Line 2:</td>
+		<td>
+			<%= property_textbox "line2label", address_question_editor.line2label, "input wide" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="label-cell">&nbsp;</td>
+		<td>
+			<%= property_radios "line2usage", {"essential"=>"essential", "optional"=>"optional", "not used"=>"not used"}, address_question_editor.line2usage, '' %>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Line 3:</td>
+		<td>
+			<%= property_textbox "line3label", address_question_editor.line3label, "input wide" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="label-cell">&nbsp;</td>
+		<td>
+			<%= property_radios "line3usage", {"essential"=>"essential", "optional"=>"optional", "not used"=>"not used"}, address_question_editor.line3usage, '' %>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Line 4:</td>
+		<td>
+			<%= property_textbox "line4label", address_question_editor.line4label, "input wide" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="label-cell">&nbsp;</td>
+		<td>
+			<%= property_radios "line4usage", {"essential"=>"essential", "optional"=>"optional", "not used"=>"not used"}, address_question_editor.line4usage, '' %>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Line 5:</td>
+		<td>
+			<%= property_textbox "line5label", address_question_editor.line5label, "input wide" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="label-cell">&nbsp;</td>
+		<td>
+			<%= property_radios "line5usage", {"essential"=>"essential", "optional"=>"optional", "not used"=>"not used"}, address_question_editor.line5usage, '' %>
+		</td>
+	</tr>
+
+
+</table>
+

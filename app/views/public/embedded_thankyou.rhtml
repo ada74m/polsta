@@ -1,0 +1,32 @@
+<div class="embedded-thankyou">
+
+	<h2>Survey complete</h2>
+	<%= render :partial=>'element', :object=>@end_of_survey, :layout=>false %>
+
+	<div class="sponsor">
+		<img src="/images/adsense_placeholder_468x60.gif">
+	</div>
+	
+	<div class="polsta">
+		<h3>Did you know...</h3>
+		<p>You can create surveys like this one at <a href="http://polsta.net">POLSTA.NET</a>.</p>
+		<p>There are no fees to pay and you can be up and running in minutes.</p>
+	</div>
+
+</div>
+
+
+<div style="display:none">
+	
+	<% (0...@google.size).each do |i| %>
+		
+		<h3><label for="response<%=i%>"><%= @google[i][0] %></label></h3>
+		<p id="response<%=i%>"><%= @google[i][1] %></p>
+
+	<% 
+	i += 1
+	end 
+	%>
+	
+	
+</div>

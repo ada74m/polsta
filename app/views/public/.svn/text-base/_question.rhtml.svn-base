@@ -1,0 +1,8 @@
+<div class="question-text"><%= h(question.text) %>
+<% if question.mandatory %><span class="mandatory">*</span><% end %>
+</div>
+<div class="question-explanation"><%= h(question.extra_text) %></div>
+<% if @validation_errors && @validation_errors[question.id] %>
+	<div class="question-errors"><%= @validation_errors[question.id].join("<br/>") %></div>
+<% end %>
+

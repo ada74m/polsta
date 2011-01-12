@@ -1,0 +1,22 @@
+
+<%= form_tag :controller=>"admin", :action=>"save" %>
+
+
+	<div class="details">
+		<div>
+			<label for="name">Name for survey:</label>
+			<span>
+				<%= text_field_tag "name", nil, :class=>"input" %><br/>
+			</span>
+		</div>		
+	</div>
+
+	<%= flash[:notice] %>
+
+	<div style="margin-top:12px">
+		<%= submit_tag "Save", :class=>"button" %>
+	</div>
+
+	
+</form>
+

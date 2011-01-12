@@ -1,0 +1,17 @@
+xml.instruct! :xml, :version => "1.0"
+xml.rss :version => "2.0" do
+  xml.channel do
+    xml.title "#{@survey.name}: responses "
+    xml.description "Responses from POLSTA.NET survey"
+    #xml.link posts_url
+
+    for response in @responses
+      xml.item do
+        xml.title "Response to version #{response.version.position} of survey \"#{@survey.name}\": #{response.created_at.to_s(:rfc822)}"
+        xml.description "#{response.summary}"
+        xml.pubDate response.created_at.to_s(:rfc822)
+        xml.link answer_url(response.guid)
+      end
+    end
+  end
+end

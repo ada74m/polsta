@@ -1,0 +1,13 @@
+<table>
+	<%= render :partial=>"question_editor", :object=>date_question_editor %>
+
+	<tr>
+		<td class="label-cell">Date format:</td>
+		<td>
+			<%= property_radios "format", {"dmy"=>"DD/MM/YYYY", "mdy"=>"MM/DD/YYYY" }, date_question_editor.format %><br/>
+		</td>
+	</tr>
+
+
+</table>
+

@@ -1,0 +1,23 @@
+development:
+      host: localhost
+      adapter: mysql
+      database: polsta_development
+      port: 3306
+      username: root
+      password: m11eend
+
+test:
+      host: localhost
+      adapter: mysql
+      database: polsta_test
+      port: 3306
+      username: root
+      password: m11eend
+
+production:
+      host: localhost
+      adapter: mysql
+      database: polsta_production
+      port: 3306
+      username: root
+      password: m11eend

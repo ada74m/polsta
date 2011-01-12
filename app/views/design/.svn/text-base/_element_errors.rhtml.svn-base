@@ -1,0 +1,6 @@
+<strong>Please fix these problems before you save:</strong><br/>
+<ul>
+	<% for line in element_errors %>
+		<li><%= line %></li>
+	<% end %>
+</ul>

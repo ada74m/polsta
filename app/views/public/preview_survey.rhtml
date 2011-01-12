@@ -1,0 +1,7 @@
+<h1><%= @survey_name %> [preview]</h1>
+
+<% for element in @design.elements %>
+
+<%= render :partial=>'element', :object=>element, :layout=>false %>
+
+<% end %>

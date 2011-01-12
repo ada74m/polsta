@@ -1,0 +1,9 @@
+<table>
+	<%= render :partial=>"question_editor", :object=>text_question_editor %>
+
+	<tr>
+		<td class="label-cell">Number of rows:</td>
+		<td><%= property_textbox "rows", text_question_editor.rows, "input" %></td>
+	</tr>
+</table>
+

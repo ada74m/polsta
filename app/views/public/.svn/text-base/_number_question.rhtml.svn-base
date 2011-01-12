@@ -1,0 +1,5 @@
+<%= render :partial=>"public/question", :object=>number_question %>
+
+<div class="response">
+	<input name="<%= number_question.id %>" class="input" value="<%= h(number_question.value) %>" />
+</div>

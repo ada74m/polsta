@@ -1,0 +1,58 @@
+8
+
+dir
+22
+file:///home/adam/repository/polsta/trunk/vendor/plugins/acts_as_list
+file:///home/adam/repository
+
+
+
+2008-10-23T14:39:33.177119Z
+10
+adam
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d69889f2-e74b-4bb7-b312-47b5ba4a9a23
+
+test
+dir
+
+init.rb
+file
+
+
+
+
+2008-10-23T14:41:07.000000Z
+0bdbdc825f80fda1a94852a82b68ffd4
+2008-10-23T14:39:33.177119Z
+10
+adam
+
+lib
+dir
+
+README
+file
+
+
+
+
+2008-10-23T14:41:07.000000Z
+42212b5cb681c9888d56f9c0f36e1e02
+2008-10-23T14:39:33.177119Z
+10
+adam
+

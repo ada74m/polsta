@@ -1,0 +1,46 @@
+<div class="inner1"><div class="inner2" >
+<%= form_tag(:action=>"edit") %>
+	<h2>Insert element</h2>
+
+	<div id="addables">
+
+		<div id="links">
+				<% @addable.each do |triple| %>
+				<%= link_to_remote(triple[1], :url=> {:action=>:add_element, :type=>triple[0], :before=>params[:id] }, :loading => "busy()", :complete => "idle()" )%>
+				<% end %>
+		</div>
+
+
+		<div id="descriptions">
+
+			<div id="addables_intro"><strong>Please choose what type of element you would like to add.</strong></div>
+
+
+			<% i=0; @addable.each do |triple| %>
+			<div id="description<%=i%>" style="display:none;">
+				<%= triple[2]%>
+			</div>
+			<% i += 1 %>
+			<% end %>
+
+		</div>
+
+		<div style="clear:both"></div>
+
+	</div>
+
+
+</form>
+
+<div style="clear:both;text-align:right;margin-top:12px;">
+<%= form_remote_tag :url=> {:action=>'hide_add_element'} %>
+	<input type="submit" value="Cancel" class="button"/>
+</form>
+</div>
+
+<script type="text/javascript">
+	new Addables("addables");
+</script>
+
+
+</div></div>

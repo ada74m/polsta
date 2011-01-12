@@ -1,0 +1,16 @@
+<table>
+	<tr>
+		<td class="label-cell">Heading:</td>
+		<td><%= property_textbox "heading", paragraph_editor.heading, "input wide" %></td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Picture:</td>
+		<td>http:// <%= property_textbox "picture_url", paragraph_editor.picture_url, "input url" %></td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Text:</td>
+		<td><%= property_textarea "text", paragraph_editor.text %></td>
+	</tr>
+</table>

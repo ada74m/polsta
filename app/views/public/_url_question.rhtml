@@ -1,0 +1,5 @@
+<%= render :partial=>"public/question", :object=>url_question %>
+
+<div class="response">
+	http://<input name="<%= url_question.id %>" class="input" value="<%= h(url_question.value) %>" />
+</div>

@@ -1,0 +1,30 @@
+<table cellspacing="0" class="survey-list" id="surveys_list">
+	<tr>
+		<th>Name</th>
+		<th>Status</th>
+		<th>Responses</th>
+		<th>&nbsp;</th>
+	</tr>
+
+	<% for row in @rows %>
+
+		<tr>
+			<td><%= row[:name] %></td>
+			<td><%= row[:status] %></td>
+			<td><%= row[:responses] %></td>
+			<td><%= link_to "details", :action=>"detail", :url_name=>row[:url_name] %></td>
+		</tr>
+
+	<% end %>
+
+</table>
+
+<script type="text/javascript">
+	new RowHighlightingTable("surveys_list");
+</script>
+
+<div id="survey-actions">
+<%= link_to "Create new survey", :controller=>'admin', :action=>'start_with_blank_design' %>
+</div>
+
+

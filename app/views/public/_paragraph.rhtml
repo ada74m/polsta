@@ -1,0 +1,12 @@
+<% if paragraph.heading %>
+<h2><%= h(paragraph.heading) %></h2>
+<% end %>
+
+<% if !(paragraph.picture_url.blank?) %>
+<img class="inline-image" src="http://<%= paragraph.picture_url%>"/>
+<% end %>
+
+<% if paragraph.text %>
+<p><%= h(format_text paragraph.text)%></p>
+<% end %>
+<div style="clear:both"></div>

@@ -1,0 +1,3 @@
+class DoNothingCommand < Command 
+
+end

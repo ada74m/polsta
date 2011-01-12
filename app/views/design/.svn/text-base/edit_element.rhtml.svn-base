@@ -1,0 +1,7 @@
+<div>
+<%= form_remote_tag :update=>'floating', :url=> {:action=>'async_edit'}, :layout=>false, :loading => "busy()", :complete => "idle()" %>
+	<h2>Edit element <%= @element.id %>.</h2>
+	<%= render(:partial => @element.edit_template_name, :object=>@element, :layout=>false) %>
+	<%= link_to_remote('edit', :update=>'floating', :url=> {:action=>:edit_element}, :layout=>false, :loading => "busy()", :complete => "idle()")%>
+<%= end_form_tag %>
+</div>

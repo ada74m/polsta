@@ -1,0 +1,52 @@
+8
+
+dir
+22
+file:///home/adam/repository/polsta/trunk/vendor/plugins/calendar_date_select/lib
+file:///home/adam/repository
+
+
+
+2008-10-23T14:39:33.177119Z
+10
+adam
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d69889f2-e74b-4bb7-b312-47b5ba4a9a23
+
+calendar_date_select.rb
+file
+
+
+
+
+2008-10-23T14:41:07.000000Z
+bd907272e2b265ef4240993a57b0f8ca
+2008-10-23T14:39:33.177119Z
+10
+adam
+
+includes_helper.rb
+file
+
+
+
+
+2008-10-23T14:41:07.000000Z
+84500dd58612b1b057f86912a4af83c6
+2008-10-23T14:39:33.177119Z
+10
+adam
+

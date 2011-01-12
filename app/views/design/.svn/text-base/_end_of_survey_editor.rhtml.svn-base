@@ -1,0 +1,16 @@
+<table>
+
+	<tr>
+		<td class="label-cell">Thank you text:</td>
+		<td><%= property_textarea "thankyou_text", end_of_survey_editor.thankyou_text %></td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Where-to-next link:</td>
+		<td>
+			<%= property_textbox "link_text", end_of_survey_editor.link_text, "wide" %><br/>
+			http:// <%= property_textbox "link_url", end_of_survey_editor.link_url, "url" %><br/>
+		</td>
+	</tr>
+
+</table>

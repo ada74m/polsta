@@ -1,0 +1,57 @@
+<%= render :partial=>"public/question", :object=>list_question %>
+
+<div class="response">
+
+<% if list_question.style == "radios" 
+	name = list_question.id %>
+	<% list_question.responses_array.each do |item| 
+	id = "#{name}:#{item}"
+	%>
+		<input type="radio" name="<%= name %>" id="<%= id %>" value="<%= item %>" <% if list_question.list_value == item %>checked="checked"<% end %> />
+		<label for="<%= id %>"><%= h(item) %></label><br/>
+	<% end %>
+	
+	<% if list_question.show_other 
+	id = "#{name}:other"
+	%>
+		<input type="radio" name="<%= name %>" id="<%= id %>" value="other" <% if list_question.list_value == "other" %>checked="checked"<% end %> />
+		<label for="<%= id %>">other - please specify:</label>
+		<input type="text" name="<%= "#{list_question.id}:other" %>" value="<%= h(list_question.other_value)%>" /><br/>
+	<% end %>
+	
+	<% if list_question.show_none 
+	id = "#{name}:none"
+	%>
+		<input type="radio" name="<%= name %>" id="<%= id %>" value="none" <% if list_question.list_value == "none" %>checked="checked"<% end %>/>
+		<label for="<%= id %>">none of the above</label>
+	<% end %>
+	
+<% elsif list_question.style == "checkboxes" 
+	name = "#{list_question.id}[]" %>
+	<% list_question.responses_array.each do |item| 
+	id = "#{name}:#{item}"
+	%>
+		<input type="checkbox" name="<%= name %>" id="<%= id %>" value="<%= item %>" onclick="if (this.checked) clearCheckboxes(new Array('<%=name%>:none'));" <% if list_question.item_selected item %>checked="checked"<% end %> />
+		<label for="<%= id %>"><%= h(item) %></label><br/>
+	<% end %>
+
+	<% if list_question.show_other 
+	id = "#{name}:other"
+	%>
+		<input type="checkbox" name="<%= name %>" id="<%= id %>" value="other" onclick="if (this.checked) clearCheckboxes(new Array('<%=name%>:none'));" <% if list_question.item_selected "other" %>checked="checked"<% end %> />
+		<label for="<%= id %>">other - please specify:</label>
+		<input type="text" class="input" name="<%= "#{list_question.id}:other" %>" value="<%= h(list_question.other_value)%>" /><br/>
+	<% end %>
+
+	<% if list_question.show_none 
+	id = "#{name}:none"
+	%>
+		<input type="checkbox" name="<%= name %>" id="<%= id %>" value="none" onclick="if (this.checked) clearCheckboxes(new Array(<%= ("other".to_a + list_question.responses_array).map { |item| "'#{name}:#{item.gsub "'", "\\'"}'"} .join "," %>));" <% if list_question.item_selected "none" %>checked="checked"<% end %>/>
+		<label for="<%= id %>">none of the above</label>
+	<% end %>
+
+
+<% end %>
+
+
+</div>

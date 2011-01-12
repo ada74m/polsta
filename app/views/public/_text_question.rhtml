@@ -1,0 +1,11 @@
+<%= render :partial=>"public/question", :object=>text_question %>
+
+<div class="response">
+
+	<% if text_question.rows == 1 %>
+		<input name="<%= text_question.id %>" class="input" value="<%= h(text_question.value) %>" />
+	<% else %>
+		<textarea name="<%= text_question.id %>" rows="<%= text_question.rows %>" cols="40" class="input"><%= h(text_question.value) %></textarea>	
+	<% end %>
+
+</div>

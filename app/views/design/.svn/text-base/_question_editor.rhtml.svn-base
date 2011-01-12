@@ -1,0 +1,15 @@
+<tr>
+	<td class="label-cell">Question text:</td>
+	<td><%= property_textbox "text", question_editor.text, "input wide" %></td>
+</tr>
+<tr>
+	<td class="label-cell">Explanatory text:</td>
+	<td><%= property_textarea "extra_text", question_editor.extra_text %></td>
+</tr>
+<tr>
+	<td class="label-cell">Question is:</td>
+	<td>
+		<%= property_radios "mandatory", {"false"=>"optional", "true"=>"mandatory" }, question_editor.mandatory %>	
+	</td>
+</tr>
+

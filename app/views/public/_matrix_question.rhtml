@@ -1,0 +1,81 @@
+<%= render :partial=>"public/question", :object=>matrix_question %>
+
+<div class="response">
+
+<table class="matrix" cellspacing="0">
+	
+	<tr>
+	<th>&nbsp;</th>
+	<% matrix_question.responses_array.each do |response| %>
+		<th><%= h(response) %></th>
+	<% end %>
+	<% if matrix_question.show_other %>
+		<th>other (specify)</th>
+	<% end %>
+	<% if matrix_question.show_none %>
+		<th>none</th>
+	<% end %>
+
+	</tr>
+
+	<% 
+	i = 0		
+	matrix_question.question_parts.each do |question| 
+	%>
+	<tr>
+		<td class="question"><%= h(question) %></td>
+		<% 
+		matrix_question.responses_array.each do |response| 
+		%>
+			<td class="radio-or-checkbox">			
+				<% if matrix_question.style == "radios"
+					name = "#{matrix_question.id}:#{i}"
+				%>
+					<input type="radio" name="<%= name %>" value="<%= response %>" <% if matrix_question.list_value(i) == response %>checked="checked"<% end %> />
+				<% elsif matrix_question.style == "checkboxes" 
+					name = "#{matrix_question.id}:#{i}[]"
+					id = "#{name}:#{response}"
+				%>
+					<input type="checkbox" name="<%= name %>" id="<%= id %>" value="<%= response %>" onclick="if (this.checked) clearCheckboxes(new Array('<%=name%>:none'));" <% if matrix_question.item_selected(i, response) %> checked="checked"<% end %>/>
+				<% end %>
+			</td>
+		<% end %>
+		<% if matrix_question.show_other %>
+			<td class="radio-or-checkbox">
+				<% if matrix_question.style == "radios" 
+					name = "#{matrix_question.id}:#{i}"
+				%>
+					<input type="radio" name="<%= name %>" value="other" <% if matrix_question.list_value(i) == "other" %>checked="checked"<% end %> />
+				<% elsif matrix_question.style == "checkboxes" 
+					name = "#{matrix_question.id}:#{i}[]"
+					id = "#{name}:other"
+				%>
+					<input type="checkbox" name="<%= name %>" id="<%= id %>" value="other" onclick="if (this.checked) clearCheckboxes(new Array('<%=name%>:none'));" <% if matrix_question.item_selected(i, "other") %> checked="checked"<% end %> />
+				<% end %>
+				<input type="text" size="5" name="<%= "#{matrix_question.id}:#{i}:other" %>" value="<%= h(matrix_question.other_value(i)) %>" />
+			</td>
+		<% end %>
+		<% if matrix_question.show_none %>
+			<td class="radio-or-checkbox">
+				<% if matrix_question.style == "radios" 
+					name = "#{matrix_question.id}:#{i}"
+				%>
+					<input type="radio" name="<%= name %>" value="none" <% if matrix_question.list_value(i) == "none" %>checked="checked"<% end %> />
+				<% elsif matrix_question.style == "checkboxes" 
+					name = "#{matrix_question.id}:#{i}[]"
+					id = "#{name}:none"
+				%>
+					<input type="checkbox" name="<%= name %>" id="<%= id %>" value="none" onclick="if (this.checked) clearCheckboxes(new Array(<%= ("other".to_a + matrix_question.responses_array).map { |item| "'#{name}:#{item.gsub "'", "\\'"}'"} .join "," %>));" <% if matrix_question.item_selected(i, "none") %> checked="checked"<% end %> />
+				<% end %>
+			</td>
+		<% end %>
+	</tr>
+	<% 
+	i+=1
+	end 
+	%>
+
+</table>
+
+
+</div>

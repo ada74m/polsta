@@ -1,0 +1,402 @@
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.004000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSurvey Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `surveys`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;35;1mSurvey Create (0.000000)[0m   [0mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, '1e541efcc9ad77552907a30ffe34df5e', NULL, '0b5a44d60d40534a96d40f8dd19ef079', 'yin', '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `versions`[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (survey_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.000000)[0m   [0;1mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 1, 0, 1, 1, '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: a2ab04a0390cf0809f01f227dc6a4a34\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 41c2413f8fa9238b7a9069c048591008\n mandatory: false\n rows: 1\n text: what\'s your name?\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 49e0f7b73a9b1417e7bf6d95c08f73aa\n mandatory: false\n rows: 1\n text: how are you?\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 287de519ff0caf58094be36ff743f454\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: f834d19fc25af205aa8d01f5ab4de209\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 1) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 1) [0m
+  [4;36;1mResponse Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `responses`[0m
+  [4;35;1mResponse Create (0.000000)[0m   [0mINSERT INTO `responses` (`remote_ip`, `updated_at`, `guid`, `version_id`, `user_id`, `answers`, `created_at`) VALUES('0.0.0.0', '2008-10-23 14:46:19', '05fefc579795255e86e7c919e1155906', 1, NULL, '--- {}\n\n', '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Update (0.000000)[0m   [0;1mUPDATE `versions` SET `responses_count` = 1, `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: a2ab04a0390cf0809f01f227dc6a4a34\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 41c2413f8fa9238b7a9069c048591008\n mandatory: false\n rows: 1\n text: what\'s your name?\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 49e0f7b73a9b1417e7bf6d95c08f73aa\n mandatory: false\n rows: 1\n text: how are you?\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 287de519ff0caf58094be36ff743f454\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: f834d19fc25af205aa8d01f5ab4de209\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.004000)[0m   [0mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 1) [0m
+  [4;36;1mSurvey Update (0.000000)[0m   [0;1mUPDATE `surveys` SET `responses_count` = 1, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 1[0m
+  [4;35;1mResponse Load (0.000000)[0m   [0mSELECT * FROM `responses` WHERE (`responses`.`id` = 1) [0m
+  [4;36;1mSQL (0.064004)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, 'e00cd393833a5e8c34dd1019df152de5', NULL, '79f691f35509b22a1d83f4cdea51cbca', 'yin', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (survey_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.000000)[0m   [0;1mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 2, 0, 1, 1, '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: 4cb4bbe2b0e4e417808f5a5f4415082a\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 5d3055ddd416694e47470971a2a95549\n mandatory: false\n rows: 1\n text: what\'s your name?\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 3c6bdc35c87d9cd3df42c50f931de615\n mandatory: false\n rows: 1\n text: how are you?\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 51c53d64414299c8ece807b93cc8b5ff\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: 89606c1f8833fe537c895ab435222366\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 2) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 2) [0m
+  [4;36;1mResponse Create (0.000000)[0m   [0;1mINSERT INTO `responses` (`remote_ip`, `updated_at`, `guid`, `version_id`, `user_id`, `answers`, `created_at`) VALUES('1.2.3.4', '2008-10-23 14:46:19', 'd26f577f00c1c74f0ecf6345f2008c73', 2, NULL, '--- {}\n\n', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `responses_count` = 1, `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: 4cb4bbe2b0e4e417808f5a5f4415082a\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 5d3055ddd416694e47470971a2a95549\n mandatory: false\n rows: 1\n text: what\'s your name?\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 3c6bdc35c87d9cd3df42c50f931de615\n mandatory: false\n rows: 1\n text: how are you?\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 51c53d64414299c8ece807b93cc8b5ff\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: 89606c1f8833fe537c895ab435222366\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 2) [0m
+  [4;35;1mSurvey Update (0.004000)[0m   [0mUPDATE `surveys` SET `responses_count` = 1, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 2[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (`versions`.`id` = 2) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `responses` WHERE (`responses`.version_id = 2) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, '8ff306614ef73426d0c028cab5260afa', NULL, 'b704169312648ff94289c634e4a0856a', 'yin', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (survey_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.000000)[0m   [0;1mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 3, 0, 1, 1, '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Update (0.004001)[0m   [0mUPDATE `versions` SET `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: 3c1de8b43a6d23edf7650c15a1ac28f3\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 4c63fd581090cdcf4d5f8e6f1d0094e0\n mandatory: false\n rows: 1\n text: what\'s your name?\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 1f48cbfb94be0396e6baba3d56a1c626\n mandatory: false\n rows: 1\n text: how are you?\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 47e1d5ad98261f7ffd2cb8292ccb74e4\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: 2af2e2d7405aab12e3909bd2025a04eb\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 3) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 3) [0m
+  [4;36;1mResponse Create (0.000000)[0m   [0;1mINSERT INTO `responses` (`remote_ip`, `updated_at`, `guid`, `version_id`, `user_id`, `answers`, `created_at`) VALUES('0.0.0.0', '2008-10-23 14:46:19', '5fd47da6db31264a873d24aa608684fb', 3, NULL, '--- {}\n\n', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `responses_count` = 1, `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: 3c1de8b43a6d23edf7650c15a1ac28f3\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 4c63fd581090cdcf4d5f8e6f1d0094e0\n mandatory: false\n rows: 1\n text: what\'s your name?\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 1f48cbfb94be0396e6baba3d56a1c626\n mandatory: false\n rows: 1\n text: how are you?\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 47e1d5ad98261f7ffd2cb8292ccb74e4\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: 2af2e2d7405aab12e3909bd2025a04eb\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 3) [0m
+  [4;35;1mSurvey Update (0.000000)[0m   [0mUPDATE `surveys` SET `responses_count` = 1, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.008001)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, '4b8f9d80ca4980f8bf5903e80e279e5d', NULL, '18d5f318112f8d0518eb88d6e5850846', 'yin', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (survey_id = 4) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.000000)[0m   [0;1mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 4, 0, 1, 1, '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: cd77f9edb409f75603620d67d3761565\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: e7bb56b300ad425680abf56333aa0b85\n mandatory: false\n rows: 1\n text: what\'s your name?\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 236d3926c125230c16f73a208179bbf7\n mandatory: false\n rows: 1\n text: how are you?\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 69e397f59b2e8c4630de6f55264cb416\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: f0476fe8358417b6fd83969b2903f449\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 4) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 4) [0m
+  [4;36;1mResponse Create (0.000000)[0m   [0;1mINSERT INTO `responses` (`remote_ip`, `updated_at`, `guid`, `version_id`, `user_id`, `answers`, `created_at`) VALUES('1.2.3.4', '2008-10-23 14:46:19', '0f5c17fb7a54452574e9533ab61744f4', 4, NULL, '--- \n236d3926c125230c16f73a208179bbf7: not bad thanks\ne7bb56b300ad425680abf56333aa0b85: adam\n', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `responses_count` = 1, `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: cd77f9edb409f75603620d67d3761565\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: e7bb56b300ad425680abf56333aa0b85\n mandatory: false\n rows: 1\n text: what\'s your name?\n- !ruby/object:TextQuestion \n extra_text: \"\"\n id: 236d3926c125230c16f73a208179bbf7\n mandatory: false\n rows: 1\n text: how are you?\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 69e397f59b2e8c4630de6f55264cb416\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: f0476fe8358417b6fd83969b2903f449\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 4) [0m
+  [4;35;1mSurvey Update (0.000000)[0m   [0mUPDATE `surveys` SET `responses_count` = 1, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 4[0m
+  [4;36;1mResponse Load (0.000000)[0m   [0;1mSELECT * FROM `responses` WHERE (`responses`.`id` = 4) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Columns (0.000000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'ekc2tb1l', '243a9f2832ce0c7278928c476d1002c54d66ee332c35e668838570ac15d2395e', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;35;1mSQL (0.004000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'jim@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'jim') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('jim', '2008-10-23 14:46:19', 0, '/A34DsMt', '32c1e16b15313c5240e8fa0f5397b31d3767ca2804cea32728a84440ba8fac1a', 0, 0, 'jim@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'my survey' AND `surveys`.user_id = 1) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='my-survey' and user_id=1) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('my survey', 'never published', '2008-10-23 14:46:19', 0, 'd505546f803863209a3fc92bdb47cb27', 1, '0605cbdcedf926a0b1711a4dadedf1b4', 'my-survey', '2008-10-23 14:46:19')[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'my survey' AND `surveys`.user_id = 1) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'my survey' AND `surveys`.user_id = 2) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='my-survey' and user_id=2) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('my survey', 'never published', '2008-10-23 14:46:19', 0, 'f5ed772be4dffa76b14f38fb1795cf9d', 2, '3b23f7fd5139f177ce6bb5a4e8df5a83', 'my-survey', '2008-10-23 14:46:19')[0m
+  [4;35;1mSQL (0.004001)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;35;1mSurvey Create (0.000000)[0m   [0mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, 'c23f906765477fee9b1bb3bcd254841d', NULL, 'cfa53b3f18644efcf42073875743f75a', 'yin', '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (survey_id = 7) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mVersion Create (0.000000)[0m   [0mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 7, 0, 1, 1, '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (survey_id = 7) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mVersion Create (0.000000)[0m   [0mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 7, 0, 2, 1, '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `versions` WHERE (`versions`.survey_id = 7) [0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.survey_id = 7) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'my survey' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'MSUxqyX5', '43ffa861ac9f282f153e4886dbdb233114b8c0a010e282531ddaf6ec39ba29f4', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (url_name='my-survey' and user_id=3) LIMIT 1[0m
+  [4;35;1mSurvey Create (0.000000)[0m   [0mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('my survey', 'never published', '2008-10-23 14:46:19', 0, '52f55cce8355cbb874c24ff050b7fc7c', 3, '9f976cdd607eea4c7c3e92e6834ee942', 'my-survey', '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'my survey' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'jim@polsta.net') [0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'jim') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('jim', '2008-10-23 14:46:19', 0, 'e3q5cifG', 'd1728da75c0466c7087b3b252ce7a958a468823a2b146b789e21fd4335e54b34', 0, 0, 'jim@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (url_name='my-survey' and user_id=4) LIMIT 1[0m
+  [4;35;1mSurvey Create (0.000000)[0m   [0mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('my survey', 'never published', '2008-10-23 14:46:19', 0, 'ebf54af8881e7b58599a33862041b943', 4, 'e28b0aaee02c736f773944a65bdefaba', 'my-survey', '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'my survey' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'A5AfPVuu', '837c40817d77bdad5a2cad91cec942c3e4c1636bf2b7ec25497e39dce6a96aed', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (url_name='my-survey' and user_id=5) LIMIT 1[0m
+  [4;35;1mSurvey Create (0.000000)[0m   [0mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('my survey', 'never published', '2008-10-23 14:46:19', 0, '892323ce4deb6ec056fb98a10f8e58d3', 5, '5befcf2b4e7c6785bccd6cd1fd001121', 'my-survey', '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'my-survey' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.004000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='my-survey' and user_id=5) LIMIT 1[0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (url_name='my-survey-1' and user_id=5) LIMIT 1[0m
+  [4;35;1mSurvey Create (0.000000)[0m   [0mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('my-survey', 'never published', '2008-10-23 14:46:19', 0, 'e6dc0de4579970e3dbfa19ed971f68e8', 5, '28a42984378cbd014e94245013d5a10f', 'my-survey-1', '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'a beautiful survey' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='a-beautiful-survey' and user_id=NULL) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('a beautiful survey', 'never published', '2008-10-23 14:46:19', 0, '5707ba7cdcafc5a3c0bed290a7f6d1df', NULL, '4ed8053950a38d3003d0b010847e6e8f', 'a-beautiful-survey', '2008-10-23 14:46:19')[0m
+  [4;35;1mSQL (0.004000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.004000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, '5D4u80lb', '098ff88d53f3d5e176eb8480e1bbab395c386b6a59044ce12fa47ac887eb1ab7', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mUser Update (0.000000)[0m   [0mUPDATE `users` SET `has_accepted_terms` = 1, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 6[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mSQL (0.004000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'VXhjUfx/', '554d0d1c3b25058a714f27ed3d676915ad94723cba22cc6674ea0cefe8080021', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'bob@polsta.net') LIMIT 1[0m
+  [4;35;1mSQL (0.004000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob is the best') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob at rest') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.004000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'NTb1a3kR', 'e57b974251e2d51ee8cb33ada8729b2a5864209ad6c44ce7a74601cff67e9e58', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'jim@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'RWDMAGGF', '056be0e0ad6acf1ffd5bd8c65dc9ebb22068378eb7c2eda746de1f756f59fe24', 0, 0, 'jim@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'bob@polsta.net') LIMIT 1[0m
+  [4;35;1mSQL (0.004001)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'GQyyg5G/', 'f96f8487600a14ea0d66e7bd61152f92aa8224183a64cdfb99075592cd53854b', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'bob@polsta.net') LIMIT 1[0m
+  [4;35;1mSQL (0.004000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'jim@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, '4vDFtN27', '1029dca335fea775da389a451911ef25c9487d7a69bd2bc53abd49f0e9f5e34c', 0, 0, 'jim@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'a one' AND `surveys`.user_id = 11) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='a-one' and user_id=11) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('a one', 'never published', '2008-10-23 14:46:19', 0, '3a5da4aa6417e072e5e4ab3c3bb5d9db', 11, 'b2ce09a01dc247d77bd8e23046e7d9b7', 'a-one', '2008-10-23 14:46:19')[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'a two' AND `surveys`.user_id = 11) [0m
+  [4;36;1mSurvey Load (0.004000)[0m   [0;1mSELECT * FROM `surveys` WHERE (url_name='a-two' and user_id=11) LIMIT 1[0m
+  [4;35;1mSurvey Create (0.000000)[0m   [0mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('a two', 'never published', '2008-10-23 14:46:19', 0, '00137f818af92fea874f6080912823ae', 11, '06224b3b34889d18e160a2abda26ce7d', 'a-two', '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `surveys` WHERE (`surveys`.user_id = 11) [0m
+  [4;35;1mSQL (0.004000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = '') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'cAG3k9fO', 'd2c051ad1a339f3c04d301d9275b9f07c08450d587f75fd3758d2e7963c8c022', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 12) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'Nghc8dSc', '49712a99fa84218db2674782c7a72c6d1bf465ab7272cc476c2187da95fb5ad9', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'robert@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('bob', '2008-10-23 14:46:19', 0, 'ZxzVVtmU', 'baa9dcd011f021f446292d3286b4dd4130d940a6c06a52dc787c2807013ca6c9', 0, 0, 'bob@polsta.net', '2008-10-23 14:46:19')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = '123456789012345678901234567890') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = '12') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'bob@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'bob') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, '2eaec4510fb3c52d9596861bcab048ba', NULL, '2828870aa11d647c2df9b7e4578a5a2d', 'yin', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (survey_id = 15) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.000000)[0m   [0;1mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 15, 0, 1, 1, '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.survey_id = 15) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, 'c20ac0a9817fce6f7150017e1db97a7f', NULL, '330398c4207d781d27acb5d673dbc749', 'yin', '2008-10-23 14:46:19')[0m
+  [4;35;1mSQL (0.004000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;35;1mSurvey Create (0.000000)[0m   [0mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, '79648cd5b82e5f683ac6df33dbb337e4', NULL, '4bd613022cdb951a456a7cf528aeb33a', 'yin', '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (survey_id = 17) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mVersion Create (0.000000)[0m   [0mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES('--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: c99697c368e922ef4f52010646d33439\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: b5c8ae437bdba10a5f83b1714c96934d\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: 76b0cfb3205f739b52bae7cd8fe96601\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', '2008-10-23 14:46:19', 17, 0, 1, 1, '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (`versions`.survey_id = 17) [0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: c99697c368e922ef4f52010646d33439\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: b5c8ae437bdba10a5f83b1714c96934d\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: 76b0cfb3205f739b52bae7cd8fe96601\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', `state` = 2, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 8[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (survey_id = 17) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mVersion Create (0.000000)[0m   [0mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES('--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: c99697c368e922ef4f52010646d33439\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: b5c8ae437bdba10a5f83b1714c96934d\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: 76b0cfb3205f739b52bae7cd8fe96601\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', '2008-10-23 14:46:19', 17, 0, 2, 1, '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Update (0.000000)[0m   [0;1mUPDATE `versions` SET `design` = '--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: c99697c368e922ef4f52010646d33439\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: b5c8ae437bdba10a5f83b1714c96934d\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: 76b0cfb3205f739b52bae7cd8fe96601\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n' WHERE `id` = 9[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 17) [0m
+  [4;36;1mSurvey Update (0.000000)[0m   [0;1mUPDATE `surveys` SET `status` = 'version 1 live', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 17[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.`id` = 8) [0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 17) [0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.survey_id = 17) [0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, '219380f312337ff40fc4fa6dd3d86668', NULL, 'b2cdb558e6f314c0b8d9d9517a5ffc78', 'yin', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Load (0.004000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.survey_id = 18) [0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (survey_id = 18) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mVersion Create (0.000000)[0m   [0mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 18, 0, 1, 2, '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (survey_id = 18) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mVersion Create (0.000000)[0m   [0mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 18, 0, 2, 1, '2008-10-23 14:46:19')[0m
+  [4;36;1mVersion Update (0.000000)[0m   [0;1mUPDATE `versions` SET `design` = NULL WHERE `id` = 11[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 18) [0m
+  [4;36;1mSurvey Update (0.000000)[0m   [0;1mUPDATE `surveys` SET `status` = 'version 1 live', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 18[0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 18) [0m
+  [4;36;1mVersion Load (0.004000)[0m   [0;1mSELECT * FROM `versions` WHERE (`versions`.survey_id = 18) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 18) [0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (`versions`.survey_id = 18) [0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `design` = NULL, `state` = 3, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 10[0m
+  [4;36;1mVersion Update (0.000000)[0m   [0;1mUPDATE `versions` SET `design` = NULL, `state` = 2, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 11[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (survey_id = 18) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.000000)[0m   [0;1mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES(NULL, '2008-10-23 14:46:19', 18, 0, 3, 1, '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Update (0.000000)[0m   [0mUPDATE `versions` SET `design` = NULL WHERE `id` = 12[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 18) [0m
+  [4;35;1mSurvey Update (0.000000)[0m   [0mUPDATE `surveys` SET `status` = 'version 2 live', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 18[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (`versions`.`id` = 10) [0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.`id` = 11) [0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 18) [0m
+  [4;35;1mVersion Load (0.004000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.survey_id = 18) [0m
+  [4;36;1mVersion Update (0.000000)[0m   [0;1mUPDATE `versions` SET `design` = NULL, `state` = 3, `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 11[0m
+  [4;35;1mSurvey Load (0.004001)[0m   [0mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 18) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL AND `surveys`.id <> 18) [0m
+  [4;35;1mSurvey Update (0.000000)[0m   [0mUPDATE `surveys` SET `status` = 'version 2 archived', `updated_at` = '2008-10-23 14:46:19' WHERE `id` = 18[0m
+  [4;36;1mVersion Load (0.000000)[0m   [0;1mSELECT * FROM `versions` WHERE (`versions`.`id` = 11) [0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.`id` = 12) [0m
+  [4;36;1mSurvey Load (0.000000)[0m   [0;1mSELECT * FROM `surveys` WHERE (`surveys`.`id` = 18) [0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.survey_id = 18) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `name` FROM `surveys` WHERE (`surveys`.name = 'yin' AND `surveys`.user_id IS NULL) [0m
+  [4;35;1mSurvey Load (0.000000)[0m   [0mSELECT * FROM `surveys` WHERE (url_name='yin' and user_id=NULL) LIMIT 1[0m
+  [4;36;1mSurvey Create (0.000000)[0m   [0;1mINSERT INTO `surveys` (`name`, `status`, `updated_at`, `responses_count`, `embedding_id`, `user_id`, `rss_id`, `url_name`, `created_at`) VALUES('yin', 'never published', '2008-10-23 14:46:19', 0, 'efd0d2816620cf0c6310ffd9a17db1b0', NULL, '00ba918764f03347d6bd55c2861103a4', 'yin', '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (survey_id = 19) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mVersion Create (0.004000)[0m   [0;1mINSERT INTO `versions` (`design`, `updated_at`, `survey_id`, `responses_count`, `position`, `state`, `created_at`) VALUES('--- &id001 !ruby/object:Design \ncommands: []\n\nelements: \n- &id002 !ruby/object:Paragraph \n design: *id001\n heading: Start by deleting this element...\n id: eb67d5b6d84e5f770a1743a64c4b463a\n position: 0\n text: ...and then click \"insert element\" to add a question, text or graphics to the survey.\nend_of_survey: !ruby/object:EndOfSurvey \n design: *id001\n id: 3afdab3b3aa2f0dd66d437fc5d7af62e\n link_text: Go the polsta.net homepage\n link_url: polsta.net\n thankyou_text: Thank you for completing this survey!\nheader: !ruby/object:SurveyHeader \n design: *id001\n first_page_only: false\n heading: New survey\n id: ebd42707f32d9c993ca8a8bd547dfe5e\n picture_url: \"\"\nlast_element_added: *id002\nrollback_points: []\n\n', '2008-10-23 14:46:19', 19, 0, 1, 1, '2008-10-23 14:46:19')[0m
+  [4;35;1mVersion Load (0.000000)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.`id` = 13) [0m
+  [4;36;1mSQL (0.004000)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUser Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.004000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'ada@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'ada') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('ada', '2008-10-23 14:46:23', 0, 'Aq/0m9lv', 'fc2cb1603bee2f74bafa6d7100feacfc8b4fe81f8defc46a12566a351202e80c', 0, 0, 'ada@polsta.net', '2008-10-23 14:46:23')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`account_name` = 'ada') LIMIT 1[0m
+
+
+Processing AdminController#index (for 0.0.0.0 at 2008-10-23 14:46:23) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.01200 (75%) | DB: 0.00400 (24%) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.060003)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'ada@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'ada') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('ada', '2008-10-23 14:46:23', 0, 'p1SV1QxO', '4226f3b70fabebf084a91fa5bb638e7e556d08b865e1300cd055fde334f7403f', 0, 0, 'ada@polsta.net', '2008-10-23 14:46:23')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`account_name` = 'ada') LIMIT 1[0m
+
+
+Processing AdminController#list (for 0.0.0.0 at 2008-10-23 14:46:23) [GET]
+  Session ID: 
+  Parameters: {"action"=>"list", "controller"=>"admin"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://test.host/user/signin
+Filter chain halted as [:check_authentication] rendered_or_redirected.
+Completed in 0.00400 (250 reqs/sec) | DB: 0.06000 (1500%) | 302 Found [http://test.host/admin/list]
+  [4;36;1mSQL (0.000000)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'ada@polsta.net') [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'ada') [0m
+  [4;36;1mUser Create (0.000000)[0m   [0;1mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('ada', '2008-10-23 14:46:23', 0, '6g/mXsAJ', '3c9bceac7d227290358fd631d5d2f22870b2e71401a1b70dc843856418b3cc7f', 0, 0, 'ada@polsta.net', '2008-10-23 14:46:23')[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`account_name` = 'ada') LIMIT 1[0m
+
+
+Processing AdminController#list (for 0.0.0.0 at 2008-10-23 14:46:23) [GET]
+  Session ID: 
+  Parameters: {"action"=>"list", "controller"=>"admin"}
+  [4;36;1mUser Load (0.004001)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 17) LIMIT 1[0m
+Redirected to http://test.host/user/terms
+Filter chain halted as [:check_authentication] rendered_or_redirected.
+Completed in 0.00400 (249 reqs/sec) | DB: 0.00400 (100%) | 302 Found [http://test.host/admin/list]
+  [4;35;1mSQL (0.004000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email = 'ada@polsta.net') [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT `account_name` FROM `users` WHERE (`users`.account_name = 'ada') [0m
+  [4;35;1mUser Create (0.000000)[0m   [0mINSERT INTO `users` (`account_name`, `updated_at`, `wishes_to_receive_news`, `password_salt`, `password_hash`, `credits`, `has_accepted_terms`, `email`, `created_at`) VALUES('ada', '2008-10-23 14:46:23', 0, '+cKjiBYY', 'eb557da5677d93b3d7d313396e1282b8cd41648f89ece890e0c8b32dcd2d85cc', 0, 0, 'ada@polsta.net', '2008-10-23 14:46:23')[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`account_name` = 'ada') LIMIT 1[0m
+
+
+Processing AdminController#index (for 0.0.0.0 at 2008-10-23 14:46:23) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 18) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 18) LIMIT 1[0m
+Redirected to http://test.host/admin/list
+Completed in 0.00400 (249 reqs/sec) | DB: 0.00400 (99%) | 302 Found [http://test.host/]
+  [4;35;1mSQL (0.004000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mROLLBACK[0m

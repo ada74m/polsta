@@ -1,0 +1,16 @@
+<h2>Unlock responses for <em><%= @name %></em> version <%= @position %></h2>
+
+
+<p>There are <%= @unpaid %> locked responses in <em><%= @name %></em> version <%= @position %></p>
+<p>You currently have <%= @credits %> credits. <%= link_to "Get more credits", :action=>"buy_credits" %></p>
+
+<% if @credits > 0 %>
+
+<p>Please choose how many credits you would like to use to unlock responses for <em><%= @name %></em> version <%= @position %>. Responses will be unlocked in date order, oldest first.</p>
+
+<form method="post">
+	<input name="credits_to_use" value="<%=@max%>" size="3" />
+	<input type="submit" value="Unlock now"/>
+</form>
+<% end %>
+

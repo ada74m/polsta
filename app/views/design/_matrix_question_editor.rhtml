@@ -1,0 +1,26 @@
+<table>
+	<%= render :partial=>"question_editor", :object=>matrix_question_editor %>
+
+	<tr>
+		<td class="label-cell">Questions:<br/>(one per line)</td>
+		<td><textarea name="set:question_parts" class="input"><%= h(matrix_question_editor.question_parts) %></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Responses:<br/>(one per line)</td>
+		<td><textarea name="set:responses" class="input"><%= h(matrix_question_editor.responses) %></textarea></td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Select answers:</td>
+		<td><%= property_radios "style", {"checkboxes"=>"select any number of answers using checkboxes", "radios"=>"select one answer using radio buttons" }, matrix_question_editor.style %></td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">On each row:</td>
+		<td>
+			<%= property_checkbox "show_other", matrix_question_editor.show_other, "show \"other\" option that allows user to type answer" %><br/>
+			<%= property_checkbox "show_none", matrix_question_editor.show_none , "show \"none of the above\" option"%> 
+		</td>
+	</tr>
+</table>

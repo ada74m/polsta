@@ -1,0 +1,52 @@
+
+
+<div id="survey-actions">
+<%= link_to "Download responses as CSV file", :action => 'responses_csv', :url_name => @version.survey.url_name, :version => @version.position %>
+</div>
+
+
+<% if @pages > 1 %>
+	<div class="pagination">
+	<% if (@page == 0) %>
+		&larr;previous
+	<% else %>
+		<%= link_to "&larr;previous", :page=>@page, :url_name=>@version.survey.url_name, :version=>@version.position, :action=>"responses" %>
+	<% end %>
+	<% (1..@pages).each do |i| %>
+	<%= link_to i, {:page=>i, :url_name=>@version.survey.url_name, :version=>@version.position, :action=>"responses"}, :class=>(@page+1==i ? "active" : "")  %>
+	
+	<% end %>
+	<% if (@page >= @pages-1) %>
+		next&rarr;
+	<% else %>
+		<%= link_to "next&rarr;", :page=>@page+2, :url_name=>@version.survey.url_name, :version=>@version.position, :action=>"responses" %>
+	<% end %>
+
+	</div>
+
+	<div class="results-count">showing responses <%= @first %> to <%= @last %> of <%= @responses_count %></div>
+<% else %>
+	<div class="results-count">showing all <%= @responses_count %> responses.</div>
+<% end %>
+
+
+
+<table cellspacing="0" class="response-list">
+	<tr>
+	<% for col in @cols %>
+		<th><%= col %></th>
+	<% end %>
+	</tr>
+
+	<% for row in @rows %>
+
+		<tr>
+			<% for cell in row %>
+				<td><%= h(cell) %></td>
+			<% end %>
+		</tr>
+
+	<% end %>
+</table>
+
+

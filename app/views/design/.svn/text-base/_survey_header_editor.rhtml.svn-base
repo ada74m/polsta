@@ -1,0 +1,20 @@
+<table>
+
+	<tr>
+		<td class="label-cell">Heading:</td>
+		<td><%= property_textbox "heading", survey_header_editor.heading, "input wide" %></td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Display header:</td>
+		<td>
+			<%= property_radios "first_page_only", {"true"=>"display only on the first page", "false"=>"display on every page of the survey" }, survey_header_editor.first_page_only %>	
+		</td>
+	</tr>
+
+	<tr>
+		<td class="label-cell">Picture:</td>
+		<td>http:// <%= property_textbox "picture_url", survey_header_editor.picture_url, "input url" %></td>
+	</tr>
+
+</table>

@@ -1,0 +1,11 @@
+<h1>Get more credits</h1>
+
+<p>During the alpha/beta period, you can get more credits for free, up to a maximum of 500.</p>
+<p>After the beta period ends, credits for POLSTA.NET must be purchased using a credit card.</p>
+
+<%= button_to "10 credits - FREE", :action=>"fake_buy", :number_to_buy=>10 %>
+<%= button_to "100 credits - FREE", :action=>"fake_buy", :number_to_buy=>100 %>
+
+<%= link_to "Back to results unlocking page", :action=>"carry_on" %>
+
+<%=  %>

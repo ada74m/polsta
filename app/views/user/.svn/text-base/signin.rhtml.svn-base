@@ -1,0 +1,72 @@
+<div class="sign-in-panel" style="float:left">
+	<h4>sign in</h4>
+	<h3>Existing users</h3>	
+
+	<%if flash[:login_error] %> <span class="error"><%= flash[:login_error] %></span> <% end %>
+	
+	<%= form_tag :action=>"signin" %>
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td><label for="username">Email address:</label></td>
+				<td><%= text_field_tag "email", nil, :class => 'input' %></td>
+			</tr>
+			<tr>
+				<td><label for="password">Password:</label></td>
+				<td><%= password_field_tag "password", nil, :class => 'input' %></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><%= submit_tag "Sign in", :class=>"button" %></td>
+			</tr>
+		</table>
+	
+	</form>
+
+</div>
+
+
+<div class="sign-in-panel" style="margin-left:440px">
+	<h4>register</h4>	
+	<h3>New users</h3>	
+
+	<%if flash[:registration_error] %> <span class="error"><%= flash[:registration_error] %></span> <% end %>
+
+	<%= form_tag :action=>"register" %>
+		<table cellpadding="2" cellspacing="0">
+			<tr>
+				<td><label for="username">Account name:</label></td>
+				<td><%= text_field_tag "account_name", params[:account_name], :class=>"input" %></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<p class="explanation"><strong>Important:</strong> When you publish a survey, the survey's URL will contain both the <strong>account name</strong> and the name of the survey. All your suveys will have the same account name, so choose it carefully!</p>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="username">Admin's email:</label></td>
+				<td><%= text_field_tag "email", params[:email], :class=>"input" %></td>
+			</tr>
+			<tr>
+				<td><label for="password">Password:</label></td>
+				<td><%= password_field_tag "password", nil, :class=>"input" %></td>
+			</tr>
+			<tr>
+				<td><label for="password">Retype:</label></td>
+				<td><%= password_field_tag "retype_password", nil, :class=>"input" %></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><%= submit_tag "Register", :class=>"button" %></td>
+			</tr>
+		</table>
+	</form>
+
+
+
+
+</div>
+
+
+
+
+

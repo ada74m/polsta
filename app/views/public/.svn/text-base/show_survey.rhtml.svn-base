@@ -1,0 +1,18 @@
+<%= render :partial=>'element', :object=>@header, :layout=>false if @show_header %>
+
+
+<%= form_tag %>
+
+
+
+	<% for element in @elements %>
+		<%= render :partial=>'element', :object=>element, :layout=>false %>
+	<% end %>
+
+	<br/>
+
+	<% if !@first_page %><input type="submit" name="submit" value="back" class="button"/><% end %>
+	<input type="submit" name="submit" value="<%= @last_page ? "finish" : "next" %>" class="button"/>
+
+</form>
+

@@ -1,0 +1,21 @@
+<div id="<%= element.id %>">
+
+	<div class="insert-element"><%= link_to_remote('insert element &rarr;', :url=> {:action=>"show_add_element", :id=>element.id}, :loading => "busy()", :complete => "idle()" ) unless element.position == nil %></div>
+
+	<div class="element-editor" id="elementEditor<%= element.id %>"  >
+		<div class="header" id="elementHead<%= element.id %>">
+			<div class="controls">
+				<%= link_to_remote('edit', :url=> {:action=>:start_edit_element, :id=>element.id }, :loading => "busy()", :complete => "idle()") if element.editable? %>
+				<%= link_to_remote('up', :url=> {:action=>:promote_element, :id=>element.id }, :loading => "busy()", :complete => "idle()") if element.deletable? %>
+				<%= link_to_remote('down', :url=> {:action=>:demote_element, :id=>element.id }, :loading => "busy()", :complete => "idle()") if element.deletable? %>
+				<%= link_to_remote('delete', :url=> {:action=>:delete_element, :id=>element.id }, :loading => "busy()", :complete => "idle()") if element.deletable? %>
+			</div>
+			<%= element.to_s %>
+		</div>
+		<div class="body">
+			<%= render(:partial => element.display_template_name, :object=>element) %>
+		</div>
+	</div>
+
+
+</div>

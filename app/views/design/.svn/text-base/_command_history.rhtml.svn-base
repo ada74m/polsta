@@ -1,0 +1,7 @@
+<h4>Command history</h4>
+<select size="10">
+<% for command in @command_history.reverse %>
+	<option><%= command %></option>	
+<% end %>
+</select>
+

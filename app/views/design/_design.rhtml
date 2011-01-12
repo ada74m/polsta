@@ -1,0 +1,44 @@
+<div id="overlay" style="display:none;"></div>
+
+<div id="element_editor" class="floating" style="display:none;"><div class="inner1"><div class="inner2">
+
+	<%= form_remote_tag :update=>'floating', :url=> {:action=>'async_edit'} , :loading => "busy()", :complete => "idle()"%>
+
+		<h2 id="edit_element_heading">Edit element</h2>
+
+		<div id="errors" style="display:none">Validation problems</div>
+
+		<div id="element_fields"></div>
+
+		<input name="edit_action" type="hidden">
+
+		<div style="text-align:right;">
+			<%= action_command_button "Save", "save" %>
+			<%= action_command_button "Cancel", "cancel" %>
+		</div>
+		
+
+	</form>
+
+</div></div></div>
+
+<div class="floating" id="add_element" style="display:none;">
+	
+</div>
+
+<div id="working" style="display:none;">&nbsp;</div>
+
+<%= render :partial=>'element', :object=>@design.header, :layout=>false %>
+
+<% for element in @design.elements %>
+
+<%= render :partial=>'element', :object=>element, :layout=>false %>
+
+<% end %>
+
+<div id="end_of_elements"></div>
+
+<div class="insert-element"><%= link_to_remote('insert element &rarr;', :url=> {:action=>"show_add_element", :id=>nil}, :loading => "busy()", :complete => "idle()", :class=>"insert-element-link" ) %></div>
+
+<%= render :partial=>'element', :object=>@design.end_of_survey, :layout=>false %>
+

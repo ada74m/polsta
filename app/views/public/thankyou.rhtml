@@ -1,0 +1,45 @@
+
+
+
+<div class="sponsor">
+  <script type="text/javascript"><!--
+  google_ad_client = "pub-0715110314060546";
+  /* thankyou_page */
+  google_ad_slot = "2932534756";
+  google_ad_width = 160;
+  google_ad_height = 600;
+  //-->
+  </script>
+  <script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
+</div>
+
+<div class="thankyou">
+
+
+  <h2>Survey complete</h2>
+  <%= render :partial=>'element', :object=>@end_of_survey, :layout=>false %>
+  
+  <div class="polsta">
+    <h3>Did you know...</h3>
+    <p>You can create surveys like this one at <a href="http://polsta.net">POLSTA.NET</a>.</p>
+    <p>There are no fees to pay and you can be up and running in minutes.</p>
+  </div>
+
+</div>
+
+
+<div style="display:none">
+  
+  <% (0...@google.size).each do |i| %>
+    
+    <h3><label for="response<%=i%>"><%= @google[i][0] %></label></h3>
+    <p id="response<%=i%>"><%= @google[i][1] %></p>
+
+  <% 
+  i += 1
+  end 
+  %>
+  
+</div>

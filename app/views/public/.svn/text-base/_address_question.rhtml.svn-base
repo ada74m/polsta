@@ -1,0 +1,38 @@
+<%= render :partial=>"public/question", :object=>address_question %>
+
+<div class="response">
+	<table>
+	<% if address_question.line1usage != "not used" %>
+	<tr>
+		<td><%= h(address_question.line1label) %></td>
+		<td><input name="<%= address_question.id %>:line1" value="<%= h(address_question.line1) %>" class="input" /></td>
+	</tr>
+	<% end %>
+	<% if address_question.line2usage != "not used" %>
+	<tr>
+		<td><%= h(address_question.line2label) %></td>
+		<td><input name="<%= address_question.id %>:line2" value="<%= h(address_question.line2) %>" class="input" /></td>
+	</tr>
+	<% end %>
+	<% if address_question.line3usage != "not used" %>
+	<tr>
+		<td><%= h(address_question.line3label) %></td>
+		<td><input name="<%= address_question.id %>:line3" value="<%= h(address_question.line3) %>" class="input" /></td>
+	</tr>
+	<% end %>
+	<% if address_question.line4usage != "not used" %>
+	<tr>
+		<td><%= h(address_question.line4label) %></td>
+		<td><input name="<%= address_question.id %>:line4" value="<%= h(address_question.line4) %>" class="input" /></td>
+	</tr>
+	<% end %>
+	<% if address_question.line5usage != "not used" %>
+	<tr>
+		<td><%= h(address_question.line5label) %></td>
+		<td><input name="<%= address_question.id %>:line5" value="<%= h(address_question.line5) %>" class="input" /></td>
+	</tr>
+	<% end %>
+	</table>
+		
+
+</div>

@@ -1,0 +1,12 @@
+<table>
+	<%= render :partial=>"question_editor", :object=>number_question_editor %>
+
+	<tr>
+		<td class="label-cell">Allow decimals:</td>
+		<td>
+			<%= property_radios "decimal", {"false"=>"whole numbers", "true"=>"decimals" }, number_question_editor.decimal %>	
+		</td>
+	</tr>
+
+</table>
+

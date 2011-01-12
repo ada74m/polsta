@@ -1,0 +1,82 @@
+8
+
+dir
+22
+file:///home/adam/repository/polsta/trunk
+file:///home/adam/repository
+
+
+
+2008-10-23T15:57:54.557036Z
+22
+adam
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d69889f2-e74b-4bb7-b312-47b5ba4a9a23
+
+test
+dir
+
+app
+dir
+
+tmp
+dir
+
+Rakefile
+file
+
+
+
+
+2008-10-23T15:26:12.000000Z
+17f2f134da4cd31ea095d5868ca89e86
+2008-10-23T14:39:33.177119Z
+10
+adam
+
+script
+dir
+
+config
+dir
+
+db
+dir
+
+doc
+dir
+
+lib
+dir
+
+vendor
+dir
+
+README
+file
+
+
+
+
+2008-10-23T14:41:08.000000Z
+0cdf56769f20a2b73a929ac3ba633152
+2008-10-23T14:39:33.177119Z
+10
+adam
+
+public
+dir
+

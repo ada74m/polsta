@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link href="/stylesheets/polsta.css" media="screen" rel="Stylesheet" type="text/css"/>
+
+	<%= javascript_include_tag "prototype" %>
+	<%= calendar_date_select_includes "silver" %>
+
+	<% if ActionView::Base.debug_rjs %>
+		<script type-"text/javascript">
+			Ajax.Responders.register({
+				onComplete: function(request, transport) {
+					new Insertion.Bottom('debug', 
+						'<div style="border:1px solid">' +
+						transport.responseText.escapeHTML() + 
+						'</div>')
+				}
+			});
+		</script>	
+	<% end %>
+</head>
+
+<body>
+	<div id="public_header">
+		<div>
+			<h1><a href="#">POLSTA.NET - unlimited online surveys</a></h1>
+		</div>
+
+	</div>
+	<div id="public_menu"><div><div>
+
+		<% if @user %>
+			<span class="logout"><%= link_to "log out #{@user.account_name}", :controller=>'user', :action=>'signout' %></span>
+		<% end %>
+	
+		<span id="breadcrumbs"><%= breadcrumbs %></span>
+		
+		
+	</div></div></div>
+	<div id="body">
+
+		<%= @content_for_layout %>
+
+	</div>
+
+
+<% if ActionView::Base.debug_rjs %>
+
+<div id="debug"></div>	
+
+<% end %>
+
+
+<% if flash[:alert] %>
+	<script type="text/javascript">
+		window.alert("<%= flash[:alert] %>");
+	</script>
+<% end %>
+
+
+</body>
+
+
+
+
+
+
+
+	
+	
+	
+	
+
+	
+	

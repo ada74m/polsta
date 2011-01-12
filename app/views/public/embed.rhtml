@@ -1,0 +1,18 @@
+EMBDEDDED<br/>
+
+
+<a href="http://polsta.net?embed=1234" id="link1">Survey 1 on POLSTA.NET</a>
+<script type="text/javascript">
+	var link = document.getElementById('link1');
+
+	html = "<iframe width=\"300\" height=\"300\" src=\"http://localhost:3000/adam/date\"/>";
+
+	if (link.outerHTML) {
+		link.outerHTML = html;
+	} 
+	else {
+		var range = link.ownerDocument.createRange();
+		range.selectNodeContents(link);
+		link.parentNode.replaceChild(range.createContextualFragment(html), link);
+	}
+</script>

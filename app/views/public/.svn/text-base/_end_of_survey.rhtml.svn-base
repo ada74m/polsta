@@ -1,0 +1,8 @@
+<% if end_of_survey.thankyou_text %>
+<p><%= format_text end_of_survey.thankyou_text %></h1>
+<% end %>
+
+<% if end_of_survey.link_text %>
+<p><a href="http://<%= end_of_survey.link_url %>"><%= end_of_survey.link_text %></a></h1>
+<% end %>
+

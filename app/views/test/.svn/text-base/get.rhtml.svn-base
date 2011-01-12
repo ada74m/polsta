@@ -1,0 +1,4 @@
+<div id="one">ONE</div>
+<div id="two">TWO</div>
+<div id="three">THREE</div>
+<%= link_to_remote "reorder", :url=> { :action=>"reorder" } %>
